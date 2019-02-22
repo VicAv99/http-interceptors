@@ -1,3 +1,11 @@
-<p>
-  tasks-list works!
-</p>
+<mat-card>
+  <mat-list>
+    <mat-list-item class="mat-list-option"
+      *ngFor="let task of tasks">
+      <p mat-line>{{task.description}}</p>
+      <button mat-mini-fab>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
