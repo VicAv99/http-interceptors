@@ -6,12 +6,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PizzaInterceptorService implements HttpInterceptor {
+export class PizzaInterceptor implements HttpInterceptor {
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.body) {
-      const pizza = req.body.description.replace(/pizza/gi, '🍕');
-      const pizzaRequest = req.clone({ body: {description: pizza, ...req} });
+      const pizzaRequest = req.clone({ body: { description: req.body.description.replace(/pizza/gi, '🍕') } });
 
       return next.handle(pizzaRequest);
     }

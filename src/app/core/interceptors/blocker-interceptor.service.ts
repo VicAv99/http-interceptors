@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BlockerInterceptorService implements HttpInterceptor {
+export class BlockerInterceptor implements HttpInterceptor {
   constructor(private snackbar: MatSnackBar) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
