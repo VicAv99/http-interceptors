@@ -13,6 +13,7 @@ import { TasksDetailsComponent } from './tasks/tasks-details/tasks-details.compo
 
 import { TasksService } from './core/tasks.service';
 import { BlockerInterceptorService } from './core/interceptors/blocker-interceptor.service';
+import { PizzaInterceptorService } from './core/interceptors/pizza-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,11 @@ import { BlockerInterceptorService } from './core/interceptors/blocker-intercept
     {
       provide: HTTP_INTERCEPTORS,
       useClass: BlockerInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PizzaInterceptorService,
       multi: true,
     }
   ],

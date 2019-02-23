@@ -7,9 +7,32 @@
     },
     {
       "id": 2,
-      "description": "asdf",
-      "blocker": true,
-      "status": true
+      "description": "Eat 🍕!",
+      "blocker": false,
+      "status": true,
+      "url": "http://localhost:3000/tasks/2",
+      "body": {
+        "id": 2,
+        "description": "Eat pizza!",
+        "blocker": false,
+        "status": true
+      },
+      "reportProgress": false,
+      "withCredentials": false,
+      "responseType": "json",
+      "method": "PATCH",
+      "headers": {
+        "normalizedNames": {},
+        "lazyUpdate": null,
+        "headers": {}
+      },
+      "params": {
+        "updates": null,
+        "cloneFrom": null,
+        "encoder": {},
+        "map": {}
+      },
+      "urlWithParams": "http://localhost:3000/tasks/2"
     }
   ]
 }
