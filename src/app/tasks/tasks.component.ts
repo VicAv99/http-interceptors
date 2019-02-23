@@ -62,7 +62,7 @@ export class TasksComponent implements OnInit {
     const emptyTask: Task = {
       id: null,
       description: '',
-      status: '',
+      blocker: false,
     };
     this.selectTask(emptyTask);
   }
