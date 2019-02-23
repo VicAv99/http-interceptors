@@ -1,13 +1,18 @@
 <mat-card>
-  <form>
+  <form (submit)="submitted.emit(currentTask)">
+    <!-- Create Task input -->
     <mat-form-field appearance="outline">
-      <input matInput placeholder="Create a Task">
+      <input matInput placeholder="Create a Task"
+        name="description" [(ngModel)]="currentTask.description">
+      <mat-icon matSuffix (click)="cancelled.emit()">clear</mat-icon>
     </mat-form-field>
+    <!-- Task Actions -->
     <mat-card-actions>
-      <mat-checkbox>
+      <mat-checkbox name="status" [(ngModel)]="currentTask.status">
         Blocked
       </mat-checkbox>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary"
+        type="submit">
         Submit
       </button>
     </mat-card-actions>

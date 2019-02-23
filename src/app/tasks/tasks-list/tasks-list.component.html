@@ -1,9 +1,9 @@
 <mat-card>
   <mat-list>
     <mat-list-item class="mat-list-option"
-      *ngFor="let task of tasks">
+      *ngFor="let task of tasks" (click)="selected.emit(task)">
       <p mat-line>{{task.description}}</p>
-      <button mat-mini-fab>
+      <button mat-mini-fab (click)="deleted.emit(task.id)">
         <mat-icon>clear</mat-icon>
       </button>
     </mat-list-item>

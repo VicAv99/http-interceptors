@@ -1,10 +1,15 @@
 <div class="wrapper">
   <div class="details-grid">
-    <app-tasks-details></app-tasks-details>
+    <app-tasks-details [selectedTask]="task"
+                        (submitted)="saveTask($event)"
+                        (cancelled)="reset()">
+    </app-tasks-details>
   </div>
 
   <div class="list-grid">
-    <app-tasks-list [tasks]="tasks">
+    <app-tasks-list [tasks]="tasks"
+                    (selected)="selectTask($event)"
+                    (deleted)="deleteTask($event)">
     </app-tasks-list>
   </div>
 </div>
