@@ -12,8 +12,8 @@ import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
 import { TasksDetailsComponent } from './tasks/tasks-details/tasks-details.component';
 
 import { TasksService } from './core/tasks.service';
-import { BlockerInterceptor } from './core/interceptors/blocker-interceptor.service';
-import { PizzaInterceptor } from './core/interceptors/pizza-interceptor.service';
+import { BlockerInterceptor } from './core/interceptors/blocker.interceptor';
+import { PizzaInterceptor } from './core/interceptors/pizza.interceptor';
 
 @NgModule({
   declarations: [

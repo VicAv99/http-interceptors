@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PizzaInterceptorService } from './pizza-interceptor.service';
+import { PizzaInterceptor } from './pizza.interceptor';
 
 describe('PizzaInterceptorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: PizzaInterceptorService = TestBed.get(PizzaInterceptorService);
+    const service: PizzaInterceptor = TestBed.get(PizzaInterceptor);
     expect(service).toBeTruthy();
   });
 });
