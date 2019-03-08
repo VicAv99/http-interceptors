@@ -10,7 +10,9 @@ export class PizzaInterceptor implements HttpInterceptor {
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.body) {
-      const pizzaRequest = req.clone({ body: { description: req.body.description.replace(/pizza/gi, '🍕') } });
+      let { description } = req.body;
+      description = description.replace(/pizza/gi, '🍕');
+      const pizzaRequest = req.clone({ body: { description } });
 
       return next.handle(pizzaRequest);
     }

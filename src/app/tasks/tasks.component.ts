@@ -43,6 +43,7 @@ export class TasksComponent implements OnInit {
   }
 
   updateTask(task: Task) {
+    console.log('update', task);
     this.tasksService.update(task)
       .subscribe(res => {
         this.reset();
